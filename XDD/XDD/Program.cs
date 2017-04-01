@@ -10,6 +10,10 @@ namespace XDD
     {
         static void Main(string[] args)
         {
+            Phonebook Book = new Phonebook();
+            Book.CommandLoop();
+            Console.WriteLine("Завершение работы...");
+            Console.ReadKey();
         }
     }
 }
