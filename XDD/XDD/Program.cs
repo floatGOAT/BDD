@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace XDD
 {
@@ -10,8 +6,13 @@ namespace XDD
     {
         static void Main(string[] args)
         {
-            
-            System.Console.ReadKey();
+            Queue mainQueue = new Queue();
+            mainQueue.Push("Первая запись");
+            mainQueue.Push("Вторая запись");
+            mainQueue.Push("Третяя запись");
+            Console.WriteLine(mainQueue.Pop().data);
+            Console.WriteLine(mainQueue.Pop().data);
+            Console.ReadKey();
         }
     }
 }
