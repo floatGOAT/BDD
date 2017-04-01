@@ -10,66 +10,32 @@ namespace XDD
     {
         static void Main(string[] args)
         {
-            /*HashTable MyTable = new HashTable();
-            for (int i = 0; i < 3; i++)
-            {
-                MyTable.Add(new DTO(String.Format("{0}", i), String.Format("Запись номер {0}", i)));
-            }
-            for (int i = 0; i < 3; i++)
-            {
-                System.Console.WriteLine(MyTable.GetByKey(String.Format("{0}", i)));
-            }*/
-            switch (Tests_HashTable.TestIn3(new HashTable()))
-            {
-                case 0:
-                    Console.WriteLine("Тест на трёх элементах пройден.");
-                    break;
-                case 1:
-                    Console.WriteLine("Тест на трёх элементах не пройден.");
-                    break;
-                    break;
-                default:
-                    Console.WriteLine("WASTED!");
-                    break;
-            }
-            switch (Tests_HashTable.TestRepeatedKeys(new HashTable()))
-            {
-                case 0:
-                    Console.WriteLine("Тест с одинаковыми ключами пройден.");
-                    break;
-                case 1:
-                    Console.WriteLine("Тест с одинаковыми ключами не пройден.");
-                    break;
-                default:
-                    Console.WriteLine("WASTED!");
-                    break;
-            }
-            switch (Tests_HashTable.TestIn10000(new HashTable()))
-            {
-                case 0:
-                    Console.WriteLine("Тест на 10000 элементов пройден.");
-                    break;
-                case 1:
-                    Console.WriteLine("Тест на 10000 элементов не пройден.");
-                    break;
-                default:
-                    Console.WriteLine("WASTED!");
-                    break;
-            }
-            switch (Tests_HashTable.TestAdd_unexisted(new HashTable()))
-            {
-                case 0:
-                    Console.WriteLine("Тест на 10000 элементов и поиске 1000 несуществующих пройден.");
-                    break;
-                case 1:
-                    Console.WriteLine("Тест на 10000 элементов и поиске 1000 несуществующих не пройден.");
-                    break;
-                default:
-                    Console.WriteLine("WASTED!");
-                    break;
-            }
 
-            System.Console.ReadKey();
+            // Тест 1: Добавление трёх элементов, поиск трёх элементов
+            if (Tests_HashTable.TestIn3(new HashTable()) == 0)
+                Console.WriteLine("Тест на трёх элементах пройден.");
+            else
+                Console.WriteLine("Тест на трёх элементах не пройден.");
+            
+            // Тест 2: Добавление одного и того же ключа дважды с разными значениями сохраняет последнее добавленное значение
+            if (Tests_HashTable.TestRepeatedKeys(new HashTable()) == 0)
+                    Console.WriteLine("Тест с одинаковыми ключами пройден.");
+            else
+                Console.WriteLine("Тест с одинаковыми ключами не пройден.");
+
+            // Тест 3: Добавление 10000 элементов в структуру и поиск одного из них
+            if (Tests_HashTable.TestIn10000(new HashTable()) == 0)
+                    Console.WriteLine("Тест на 10000 элементов пройден.");
+            else
+                Console.WriteLine("Тест на 10000 элементов не пройден.");
+
+            // Тест 4: Добавление 10000 элементов в структуру и поиск 1000 недобавленных ключей, поиск которых должен вернуть null
+            if (Tests_HashTable.TestAdd_unexisted(new HashTable()) == 0)
+                    Console.WriteLine("Тест на 10000 элементов и поиске 1000 несуществующих пройден.");
+            else
+                Console.WriteLine("Тест на 10000 элементов и поиске 1000 несуществующих не пройден.");
+
+            Console.ReadKey();
         }
     }
 }
