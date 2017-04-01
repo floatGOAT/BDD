@@ -10,6 +10,8 @@ namespace XDD
     {
         static void Main(string[] args)
         {
+            
+            System.Console.ReadKey();
         }
     }
 }
