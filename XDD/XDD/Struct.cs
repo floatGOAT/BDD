@@ -11,8 +11,8 @@ namespace XDD
         public queue()
         {
             data = String.Empty;
-            head = null;
-            prev = null;
+            head = this;
+            prev = this;
         }
 
         internal queue head;

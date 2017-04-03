@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace XDD
 {
@@ -6,12 +9,11 @@ namespace XDD
     {
         static void Main(string[] args)
         {
-            Queue mainQueue = new Queue();
-            mainQueue.Push("Первая запись");
-            mainQueue.Push("Вторая запись");
-            mainQueue.Push("Третяя запись");
-            Console.WriteLine(mainQueue.Pop().data);
-            Console.WriteLine(mainQueue.Pop().data);
+            MyQueue.Values = new List<object>();
+            Tests_MyQueue.Once1000elements(new Queue());
+            Tests_MyQueue.OneElement1000times(new Queue());
+            
+            Console.WriteLine("Завершение работы..."); // Epic story - epic string!
             Console.ReadKey();
         }
     }

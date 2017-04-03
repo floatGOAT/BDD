@@ -13,20 +13,20 @@ namespace XDD
             Tail = new queue();
         }
 
-        // +
+        // -
         public void Push(string Data)
         {
             if (Tail == null)
             {
                 Tail.data = Data;
-                Tail.head = Tail;
+                Tail.head = this.Tail;
             }
             else
             {
                 queue newTail = new queue();
                 newTail.data = Data;
                 newTail.head = Tail.head;
-                Tail.prev = newTail;
+                newTail.prev = Tail;
                 Tail = newTail;
             }
         }
