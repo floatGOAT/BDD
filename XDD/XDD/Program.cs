@@ -10,6 +10,14 @@ namespace XDD
     {
         static void Main(string[] args)
         {
+            BinarySearch.SimpleTest();
+            BinarySearch.TestNegativeNumbers();
+            BinarySearch.TestNonExistentElement();
+            BinarySearch.TestRepeatingNumbers();
+            BinarySearch.TestEmptyArray();
+            // BinarySearch.StressTest();
+
+            Console.ReadKey();
         }
     }
 }
